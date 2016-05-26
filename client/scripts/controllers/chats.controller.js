@@ -38,7 +38,7 @@ export default class ChatsCtrl extends Controller {
         name: 'Katie Peterson',
         picture: 'https://randomuser.me/api/portraits/thumb/women/2.jpg',
         lastMessage: {
-          text: 'Look at my mukluks!',
+          text: 'Look at my new toy!',
           timestamp: Moment().subtract(4, 'days').toDate()
         }
       },
@@ -52,5 +52,9 @@ export default class ChatsCtrl extends Controller {
         }
       }
     ];
+  }
+  
+  remove(chat) {
+      this.data.splice(this.data.indexOf(chat), 1);
   }
 }
