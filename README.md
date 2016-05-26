@@ -11,6 +11,7 @@ Point your browser to `http://localhost:3000/`
 To run for iOS (Mac)
 ```
 $meteor run ios
+$meteor run ios-device
 ```
 The app starts on an iOS simulator.
 
