@@ -18,3 +18,4 @@ The app starts on an iOS simulator.
 
 Other links: 
 [Github code from idanwe](https://github.com/idanwe/meteor-whatsapp)
+[Great step by step commit code](https://github.com/DAB0mB/angular-meteor-whatsapp)
