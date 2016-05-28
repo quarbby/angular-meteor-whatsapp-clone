@@ -20,6 +20,8 @@ export default class ChatCtrl extends Controller {
                 return Chats.findOne(this.chatId);
             }
         });
+        
+        this.autoScroll();
     }
     
     sendMessage() {
@@ -52,6 +54,17 @@ export default class ChatCtrl extends Controller {
         if (this.isCordava) {
             cordova.plugins.Keyboard.close();
         }
+    }
+    
+    autoScroll() {
+        let recentMessagesNum = this.messages.length;
+        
+        this.autorun(() => {
+           const currMessagesNum = this.getCollectionReactively('messages').length;
+           const animate = recentMessagesNum != currMessagesNum;
+           recentMessagesNum = currMessagesNum;
+           this.scrollBottom(animate); 
+        });
     }
     
     scrollBottom(animate) {
