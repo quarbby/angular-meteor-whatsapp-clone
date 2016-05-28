@@ -12,7 +12,7 @@ export default class ProfileCtrl extends Controller {
     updateName() {
         if (_.isEmpty(this.name)) return;
         
-        this.callMethod('updateName', this.name, (err) => {
+        Meteor.call('updateName', this.name, (err) => {
            if (err) return this.handleError(err);
            this.$state.go('tab.chats'); 
         });
