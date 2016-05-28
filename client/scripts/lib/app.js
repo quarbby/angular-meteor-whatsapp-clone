@@ -52,6 +52,7 @@ new Loader(App)
     
     .load(CalendarFilter)
     .load(ChatNameFilter)
+    .load(ChatPictureFilter)
     
     .load(NewChatService)
     

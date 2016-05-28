@@ -1,8 +1,34 @@
 import Moment from 'moment';
 import {Meteor} from 'meteor/meteor';
 import {Chats, Messages} from '../lib/collections';
+import {Accounts} from 'meteor/accounts-base';
 
 Meteor.startup(function() {
+    if (Meteor.users.find().count() != 0) { return; }
+    
+    console.log("USers here");
+    
+    Accounts.createUserWithPhone({
+        phone: '+972501234567',
+        profile: {
+        name: 'Alice'
+        }
+    });
+    
+    Accounts.createUserWithPhone({
+        phone: '+972501234568',
+        profile: {
+        name: 'Bob'
+        }
+    });
+    
+    Accounts.createUserWithPhone({
+        phone: '+972501234569',
+        profile: {
+        name: 'Candy'
+        }
+    });   
+    
     if (Chats.find().count() !== 0) { return; }
     
     Messages.remove({});
